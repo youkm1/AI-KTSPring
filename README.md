@@ -1,8 +1,4 @@
-# AI-KTSpring
 
-sionic-ai VIP 온보딩 팀의 AI 챗봇 서비스로, Kotlin과 Spring Boot 기반의 실시간 채팅 시스템입니다.
-
----
 
 ## 1. 과제 분석 과정
 
