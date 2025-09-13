@@ -190,4 +190,3 @@ GET /api/admin/reports/daily-chats   - CSV 보고서 다운로드
 - SYSTEM 메시지 기반 대외비 문서 학습
 - 실시간 스트리밍 응답
 - 고급 보안 정책
-- 다중 AI 모델 지원
