@@ -138,7 +138,7 @@ CREATE TABLE chat_messages (
 
 ### 인증 및 사용자 관리
 - **회원가입/로그인**: JWT 기반 인증
-- **역할 관리**: ADMIN/MEMBER 권한 구분
+- **역할 관리**: ADMIN/MEMBER 권한 구분, JWT Scope 기반
 - **활동 추적**: 회원가입, 로그인, 대화 생성 기록
 
 ### 실시간 채팅 시스템
