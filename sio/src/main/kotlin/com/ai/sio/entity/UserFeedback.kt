@@ -4,25 +4,25 @@ import jakarta.persistence.*
 
 @Entity
 class UserFeedback(
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long = 0,
+    
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    val user: User,
+    val user: User? = null,
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "thread_id", nullable = false)
-    val chatThread: ChatThread,
+    val chatThread: ChatThread? = null,
     
     @Column(name = "is_positive", nullable = false)
-    val isPositive: Boolean,
+    val isPositive: Boolean = false,
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     val status: FeedbackStatus = FeedbackStatus.PENDING,
     
     @Column(columnDefinition = "TEXT")
-    val comment: String? = null,
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0
-) : TimeStampEntity()
+    val comment: String? = null
+) : BaseEntity()

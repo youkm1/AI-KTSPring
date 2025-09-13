@@ -20,10 +20,10 @@ data class FeedbackDto(
         fun from(feedback: UserFeedback): FeedbackDto {
             return FeedbackDto(
                 id = feedback.id,
-                userId = feedback.user.id,
-                userName = feedback.user.name,
-                userEmail = feedback.user.email,
-                threadId = feedback.chatThread.id,
+                userId = feedback.user?.id ?: 0,
+                userName = feedback.user?.name ?: "",
+                userEmail = feedback.user?.email ?: "",
+                threadId = feedback.chatThread?.id ?: 0,
                 isPositive = feedback.isPositive,
                 status = feedback.status,
                 comment = feedback.comment,

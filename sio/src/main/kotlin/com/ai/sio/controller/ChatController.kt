@@ -158,7 +158,7 @@ class ChatController(
             messages = messages.map { message ->
                 MessageDetail(
                     id = message.id,
-                    role = message.role.name.lowercase(),
+                    role = message.role?.name?.lowercase() ?: "unknown",
                     content = message.content,
                     createdAt = message.createdAt
                 )
