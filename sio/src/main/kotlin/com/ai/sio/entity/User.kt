@@ -3,21 +3,22 @@ package com.ai.sio.entity
 import jakarta.persistence.*
 
 @Entity
-data class User(
+@Table(name = "users")
+class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
-
+    
     @Column(unique = true, nullable = false)
-    val email: String,
-
+    val email: String = "",
+    
     @Column(nullable = false)
-    val password: String,
-
+    val password: String = "",
+    
     @Column(nullable = false)
-    val name: String,
-
+    val name: String = "",
+    
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    val role: UserRole = UserRole.MEMBER,
-)
+    val role: UserRole = UserRole.MEMBER
+) : TimeStampEntity()
