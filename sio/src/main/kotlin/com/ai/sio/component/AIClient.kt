@@ -26,8 +26,8 @@ class AIClient(
         val requestBody = mapOf("contents" to contents)
 
         return webClient.post()
-            .uri("/models/$model:generateContent?key=$apiKey")
-            .header("Content-Type", "application/json")
+            .uri("/models/$model:generateContent")
+            .header("X-goog-api-key", apiKey)
             .bodyValue(requestBody)
             .retrieve()
             .onStatus(HttpStatusCode::is4xxClientError) { response ->

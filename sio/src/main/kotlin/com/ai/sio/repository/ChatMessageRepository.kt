@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository
 @Repository
 interface ChatMessageRepository : JpaRepository<ChatMessage, Long> {
     fun findByThreadIdOrderByCreatedAtAsc(threadId: Long): List<ChatMessage>
+    fun findByThreadIdOrderByCreatedAtDesc(threadId: Long): List<ChatMessage>
+    fun countByThreadId(threadId: Long): Int
 }

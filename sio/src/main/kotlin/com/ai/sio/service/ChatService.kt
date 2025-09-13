@@ -101,5 +101,18 @@ class ChatService(
 
         chatThreadRepository.delete(thread)
     }
+    
+    // ============================================
+    // 통합 컨트롤러를 위한 추가 메서드들
+    // ============================================
+    
+    fun getMessageCount(threadId: Long): Int {
+        return chatMessageRepository.countByThreadId(threadId)
+    }
+    
+    fun getLastMessage(threadId: Long): String? {
+        val messages = chatMessageRepository.findByThreadIdOrderByCreatedAtDesc(threadId)
+        return messages.firstOrNull()?.content
+    }
 
 }
